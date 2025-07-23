@@ -1,0 +1,10 @@
+<?php
+/** @var \Bhavesh\Deliverydate\Block\Product\DeliveryDate $block */
+$_product = $block->getCurrentProduct();
+if ($_product && $block->isEnabled() && $_product->getDeliveryDate()):
+?>
+    <div class="product-delivery-date">
+    	Estimated Delivery: <strong><?= $block->escapeHtml($block->formatDate($_product->getDeliveryDate(), \IntlDateFormatter::LONG)) ?></strong>
+        
+    </div>
+<?php endif; ?>
